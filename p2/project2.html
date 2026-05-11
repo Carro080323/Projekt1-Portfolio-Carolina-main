@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="En webbplats om HTMLs historia, hur det fungerar, tillgänglighet och grunderna i webbutveckling.">
+  <title>Webbens historia</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
+
+  <nav aria-label="Huvudnavigation">
+    <span>Webbens &amp; HTMLs historia</span>
+    <ul>
+      <li><a class="nav-link" href="./assets/grounds.html">Grunderna</a></li>
+      <li><a class="nav-link" href="./assets/history.html">HTMLs historia</a></li>
+      <li><a class="nav-link" href="./assets/dom.html">Hur fungerar det?</a></li>
+      <li><a class="nav-link" href="./assets/access.html">Tillgänglighet</a></li>
+      <li><a class="nav-link" href="../index.html">Portfolio</a></li>
+      <li><a class="nav-link" href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <div class="hero-home">
+      <h1>Välkommen</h1>
+      <p>Den här sidan handlar om HTML, webbens historia, hur DOM fungerar och varför tillgänglighet är viktigt.</p>
+      <a class="cta" href="./assets/grounds.html">Lär dig grunderna</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="content">
+      <article>
+        <h2>HTMLs historia</h2>
+        <p>HTML och webben utvecklades i början av 1990-talet av Tim Berners-Lee.</p>
+        <a class="inline-link" href="./assets/history.html">Läs mer om HTMLs historia</a>
+      </article>
+      <figure>
+        <img src="./img/girl_coder.webp" alt="Kvinna programmerar HTML" loading="lazy">
+      </figure>
+    </section>
+
+    <section class="content">
+      <article>
+        <h2>Hur fungerar det? – DOM</h2>
+        <p>DOM är en representation av ett HTML-dokument som ett träd.</p>
+        <a class="inline-link" href="./assets/dom.html">Läs mer om DOM</a>
+      </article>
+      <figure>
+        <img src="./img/dom.webp" alt="Illustration av DOM-struktur" loading="lazy">
+      </figure>
+    </section>
+
+    <section class="content">
+      <article>
+        <h2>Tillgänglighet på webben</h2>
+        <p>Webbtillgänglighet handlar om att göra webbplatser användbara för alla människor.</p>
+        <ul>
+          <li>Semantisk HTML</li>
+          <li>Alt-texter på bilder</li>
+          <li>Tydlig kontrast</li>
+          <li>Tangentbordsnavigering</li>
+          <li>Skip-link</li>
+        </ul>
+        <a class="inline-link" href="./assets/access.html">Läs mer om tillgänglighet</a>
+      </article>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Kontakt</h2>
+      <form aria-label="Kontaktformulär">
+        <label for="namn">Namn:</label>
+        <input type="text" id="namn" name="namn" required>
+
+        <label for="email">E-post:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="meddelande">Meddelande:</label>
+        <textarea id="meddelande" name="meddelande" required></textarea>
+
+        <button type="submit" aria-label="Skicka meddelande">Skicka</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <a class="footer-link" href="#home">Till toppen</a>
+  </footer>
+</body>
+
+</html>

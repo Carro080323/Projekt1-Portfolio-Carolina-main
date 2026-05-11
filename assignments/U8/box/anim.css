@@ -1,0 +1,103 @@
+/* Animations */
+
+/* 
+EGENSKAPER:
+background-color: gray;
+transition: transform 1s;              <-- muy importante!
+color: blue;
+transform: translateX(0) translateY(0)
+scale: 110%;
+rotate: 1 0 1 120deg;
+width
+height
+animation: regelnamn millisekunder;
+
+REGLER:
+@keyframes namn
+
+Kom ihåg: om du vill påverka en underliggande tagg (t.ex. .child) skriv i ".parent:hover .child {  } "
+*/
+
+:root {
+  --clr-copy: #3a3a3a;
+  /* brödtext på sidan */
+
+  --clr-primary: #f6f6f6;
+  /* bakgrundsfärg och primära färgen */
+  --clr-secondary: rgb(65, 105, 225);
+  /* navigationsfärg och bakgrundsfärg när man klickar  */
+  --clr-cta: rgb(7, 121, 245);
+  /* CTA-färg */
+  --clr-highlight: rgb(21, 148, 211);
+  /* highlight i menyn */
+
+  --clr-navbar: #fafafa;
+  --clr-dropdown-background: #ffffff;
+  /* dropdown-menyns bakgrund */
+
+  --clr-hover: var(--clr-highlight);
+  /* markeringsfärg */
+  --clr-active: var(--clr-dropdown-background);
+  /* färg på text när man klickar */
+
+  --clr-line: #ebebeb;
+  /* linje */
+
+  --clr-navbar-shadow: 0 4px 12px #d6d6d6;
+  /* för ljus UI använd en ljusgrå nyans */
+  --clr-menu-shadow: 0 4px 24px #d2d2d2;
+  /* för mörkt UI använd en mörkare nyans av cta */
+
+  --menu-dropdown-size: 1.5em;
+  /* hur stora ska dropdown-menyn vara? */
+  --menu-item-size: 1em;
+  /* hur stort ska gränssnittet vara? */
+  --border-radius: 0.5rem;
+  /* rundade kanter */
+
+  /*TODO: Ändra typsnitt här om du vill (kanske mest intressant när du använder denna dropdown i ditt projekt)*/
+  --ff-primary: "Segoe UI", sans-serif;
+  --ff-secondary: "Segoe UI", sans-serif;
+}
+
+.child {
+    background: var(--clr-cta);
+}
+
+.parent:hover>.child {
+    animation: infinite rotate 5s;
+}
+
+
+
+/* keyframe-regler du kan prova 
+   aktivera genom att skriva animation: regelnamn millisekunder;
+   i den sak som ska animeras.
+*/
+
+@keyframes rotate {
+    0% {
+        transform: translateX(0) translateY(0);
+
+    }
+
+    25% {
+        transform: translateX(100%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(100%) translateY(100%);
+
+    }
+
+    75% {
+        transform: translateX(0) translateY(100%);
+
+    }
+
+
+    100% {
+        transform: translateX(0) translateY(0);
+
+    }
+}
