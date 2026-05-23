@@ -2,132 +2,220 @@
 <html lang="sv">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <meta name="description"
-    content="Lär dig om webbtillgänglighet och hur man skapar webbplatser som kan användas av alla, inklusive personer med funktionsnedsättningar.">
+    content="Lär dig om webbtillgänglighet och hur man skapar webbplatser som kan användas av alla, inklusive personer med funktionsnedsättningar." />
+
   <title>Tillgänglighet</title>
-  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <script script src="../../Dropdown-menu/menu.js" defer></script>
 </head>
 
 <body>
+
   <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
 
   <nav aria-label="Huvudnavigation">
+
     <span>Webbens &amp; HTMLs historia</span>
-    <ul>
+
+    <ul id="primary-navigation">
       <li><a class="nav-link" href="../project2.html">Hem</a></li>
       <li><a class="nav-link" href="../assets/grounds.html">Grunderna</a></li>
       <li><a class="nav-link" href="../assets/history.html">HTMLs historia</a></li>
       <li><a class="nav-link" href="../assets/dom.html">Hur fungerar det?</a></li>
-      <li><a class="nav-link" href="../assets/access.html" aria-current="page">Tillgänglighet</a></li>
+      <li>
+        <a class="nav-link" href="../assets/access.html" aria-current="page">
+          Tillgänglighet
+        </a>
+      </li>
     </ul>
+
+    <button class="hamburger-button" id="hamburger-button" aria-label="Meny" aria-expanded="false">
+      <svg fill="var(--clr-secondary)" class="icon-hamburger" viewBox="0 0 100 100" width="32">
+        <rect class="line top" width="90" height="3" x="5" y="30" rx="2"></rect>
+        <rect class="line middle" width="90" height="3" x="5" y="50" rx="2"></rect>
+        <rect class="line bottom" width="50" height="3" x="45" y="70" rx="2"></rect>
+      </svg>
+    </button>
+
   </nav>
 
   <header id="home">
+
     <div class="hero-subpage">
+
       <div class="hero-text">
         <h1>Tillgänglighet på webben</h1>
         <p>En tillgänglig webb gör information och funktioner möjliga för alla.</p>
       </div>
+
       <div class="hero-image">
-        <img src="../img/accessibility.webp" alt="Kvinna använder teckenspråk vid dator" loading="lazy">
+        <img
+          src="../img/accessibility.webp"
+          alt="Kvinna använder teckenspråk vid dator"
+          loading="lazy"
+        />
       </div>
+
     </div>
+
   </header>
 
   <main id="main-content">
+
+    <!-- BAKGRUND -->
     <section class="content">
+
       <div>
         <h2>Bakgrund</h2>
-        <p>Webbtillgänglighet innebär att webbplatser och digitala tjänster ska kunna användas av alla människor,
+        <p>
+          Webbtillgänglighet innebär att webbplatser och digitala tjänster ska kunna användas av alla människor,
           oavsett om de har fysiska, sensoriska eller kognitiva begränsningar. Genom att göra webben tillgänglig
           säkerställer man att fler kan ta del av information, kommunicera och utföra digitala uppgifter på ett
-          självständigt sätt.</p>
+          självständigt sätt.
+        </p>
       </div>
+
       <div>
-        <img src="../img/accessibility.jpeg" alt="Kvinna med robotarm vid dator i kontorsmiljö" loading="lazy">
+        <img
+          src="../img/accessibility.jpeg"
+          alt="Kvinna med robotarm vid dator i kontorsmiljö"
+          loading="lazy"
+        />
       </div>
+
     </section>
 
     <section class="content">
+
       <div>
         <h2>Skip-link</h2>
-        <p>Skip-links är länkar som gör det möjligt för användare att hoppa över repetitiva navigeringsmenyer och direkt
-          gå till huvudinnehållet på sidan. Detta är särskilt viktigt för personer som använder skärmläsare eller
-          navigerar med tangentbord, eftersom det sparar tid och gör sidan mer användarvänlig.</p>
+        <p>
+          Skip-links är länkar som gör det möjligt för användare att hoppa över repetitiva navigeringsmenyer och
+          direkt gå till huvudinnehållet på sidan. Detta är särskilt viktigt för personer som använder skärmläsare
+          eller tangentbord.
+        </p>
       </div>
+
       <div>
-        <img src="../img/example-skip-link.png" alt="Skip to content markerad med röd pil" loading="lazy">
+        <img
+          src="../img/example-skip-link.png"
+          alt="Skip to content markerad med röd pil"
+          loading="lazy"
+        />
       </div>
+
     </section>
 
     <section class="content">
+
       <div>
         <h2>Tangentbordsnavigering</h2>
-        <p>Alla funktioner på webbplatsen bör kunna nås och användas helt med tangentbordet. Detta hjälper personer med
-          motoriska begränsningar, synnedsättning eller de som föredrar tangentbord framför mus. Genom tydliga
-          tabbordningar och fokusindikatorer blir webbplatsen mer intuitiv och lättanvänd.</p>
+        <p>
+          Alla funktioner på webbplatsen bör kunna nås och användas helt med tangentbordet. Detta hjälper personer
+          med motoriska begränsningar, synnedsättning eller de som föredrar tangentbord framför mus.
+        </p>
       </div>
+
       <div>
-        <img src="../img/shortcuts.webp" alt="Mekaniskt tangentbord med färgglada tangenter" loading="lazy">
+        <img
+          src="../img/shortcuts.webp"
+          alt="Mekaniskt tangentbord med färgglada tangenter"
+          loading="lazy"
+        />
       </div>
+
     </section>
 
     <section class="content">
+
       <div>
         <h2>Alt-attribut för bilder</h2>
-        <p>Alt-texter beskriver innehållet i bilder och gör det möjligt för skärmläsare att läsa upp informationen för
-          användare med synnedsättning. Dekorativa bilder kan ha tom alt-text (alt="") för att undvika onödig
-          uppläsning. Att alltid använda alt-attribut är avgörande för att webben ska vara inkluderande.</p>
+        <p>
+          Alt-texter beskriver innehållet i bilder och gör det möjligt för skärmläsare att läsa upp informationen.
+          Dekorativa bilder kan ha tom alt-text (alt="").
+        </p>
       </div>
+
       <div>
-        <img src="../img/ALT_Attribute.webp"
-          alt="Illustration av alt-attribut på skärmläsare, sökmotor och trasiga bilder" loading="lazy">
+        <img
+          src="../img/ALT_Attribute.webp"
+          alt="Illustration av alt-attribut på skärmläsare, sökmotor och trasiga bilder"
+          loading="lazy"
+        />
       </div>
+
     </section>
 
     <section class="content">
+
       <div>
         <h2>Tydlig navigering</h2>
-        <p>En logisk och konsekvent navigationsstruktur gör webbplatsen lättare att använda. Tydliga menyer, länkar och
-          rubriker hjälper personer med kognitiva svårigheter att orientera sig och hitta information snabbt. Att följa
-          standarder för navigering förbättrar användarupplevelsen för alla besökare.</p>
+        <p>
+          En logisk och konsekvent navigationsstruktur gör webbplatsen lättare att använda. Tydliga menyer och
+          rubriker hjälper användare att hitta information snabbt.
+        </p>
       </div>
+
       <div>
-        <img src="../img/navigation.jpg" alt="Navigationsmeny med flera nivåer och färgkontrast" loading="lazy">
+        <img
+          src="../img/navigation.jpg"
+          alt="Navigationsmeny med flera nivåer och färgkontrast"
+          loading="lazy"
+        />
       </div>
+
     </section>
 
     <section class="content">
+
       <div>
         <h2>Klickbara områden</h2>
-        <p>Knappar och länkar bör vara tillräckligt stora för att klickas på enkelt, även för personer med motoriska
-          svårigheter eller på små skärmar. Att ha tillräckligt med avstånd mellan klickbara element minskar risken för
-          misstag och gör sidan mer användarvänlig på mobila enheter.</p>
+        <p>
+          Knappar och länkar bör vara tillräckligt stora för att klickas på enkelt. Detta förbättrar användbarheten
+          på mobila enheter och för personer med motoriska svårigheter.
+        </p>
       </div>
+
       <div>
-        <img src="../img/bootstrap-ui-kit-button-design.png" alt="Webbknappar i olika färger, stilar och storlekar"
-          loading="lazy">
+        <img
+          src="../img/bootstrap-ui-kit-button-design.png"
+          alt="Webbknappar i olika färger, stilar och storlekar"
+          loading="lazy"
+        />
       </div>
+
     </section>
 
     <section class="content">
+
       <div>
         <h2>Färgkontrast</h2>
-        <p>Tillräcklig kontrast mellan text och bakgrund är viktig för att göra innehållet lättläst. God kontrast
-          hjälper personer med synnedsättning, färgblindhet och andra visuella begränsningar. Verktyg och riktlinjer kan
-          användas för att säkerställa att kontrastförhållanden uppfyller tillgänglighetsstandarder.</p>
+        <p>
+          Tillräcklig kontrast mellan text och bakgrund är viktig för läsbarhet. Det hjälper personer med
+          synnedsättning och färgblindhet.
+        </p>
       </div>
+
       <div>
-        <img src="../img/color-wheel.jpg" alt="Färgcirkel med primära, sekundära och tertiära färger" loading="lazy">
+        <img
+          src="../img/color-wheel.jpg"
+          alt="Färgcirkel med primära, sekundära och tertiära färger"
+          loading="lazy"
+        />
       </div>
+
     </section>
+
   </main>
 
   <footer>
     <a class="footer-link" href="#home">Till toppen</a>
   </footer>
-</body>
 
+</body>
 </html>

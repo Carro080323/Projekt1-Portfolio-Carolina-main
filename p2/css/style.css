@@ -13,12 +13,27 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: sans-serif;
   background-color: #0f172a;
   color: #e4eaf0;
   line-height: 1.6;
   margin: 0;
+  overflow-x: hidden;
+}
+
+img {
+display: block;        /*Gör bilden till ett block-element som bryter rad */
+max-width: 40ch;   /* Ser till att bilden aldrig kan bli större än sin förälder */
+
+object-fit: cover;   /*Ser till att bilder aldrig blir mosade eller förlorar proportioner */
+
+font-style: italic;  /* Frivilligt gör att om bilden saknas är alt-texten kursiv*/
+color: gray;
 }
 
 main {
@@ -53,43 +68,58 @@ ul {
   text-decoration: underline;
 }
 
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+
 nav {
   position: sticky;
   top: 0;
   z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+
   padding: 1rem 2rem;
+
   background: #020617;
   border-bottom: 0.02rem solid #1e293b;
 }
 
 nav span {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-weight: bold;
 }
 
 nav ul {
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
   list-style: none;
+  padding-left: 0;
 }
 
+/* NAV LINKS */
 .nav-link {
   color: inherit;
-  margin-right: 1.25rem;
   position: relative;
-  transition: 0.2s;
 }
 
 .nav-link::after {
   content: "";
   position: absolute;
+
   width: 0;
   height: 2px;
+
   bottom: -2px;
   left: 0;
+
   background-color: #38bdf8;
   transition: width 0.3s ease;
 }
@@ -99,6 +129,7 @@ nav ul {
   width: 100%;
 }
 
+/* focus styling */
 .nav-link:focus,
 .inline-link:focus,
 .footer-link:focus {
@@ -107,25 +138,10 @@ nav ul {
   text-decoration: underline;
 }
 
-.nav-link::after,
-.inline-link::after,
-.footer-link::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease;
-}
 
-.nav-link:hover::after,
-.inline-link:hover::after,
-.footer-link:hover::after {
-  transform: scaleX(1);
-}
+/* =====================================================
+   HERO
+===================================================== */
 
 header {
   background: linear-gradient(rgba(27,17,30,0.95), rgba(167,139,250,0.25));
@@ -138,29 +154,33 @@ header {
 }
 
 .hero-home {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../img/hero2.webp");
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("../img/hero2.webp");
+
   background-size: cover;
   background-position: center;
-  padding: 4rem;
+
+  padding: clamp(2rem, 6vw, 4rem);
   text-align: left;
 }
 
 .hero-home h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 6vw, 3rem);
   margin-bottom: 1rem;
-  margin-inline: 1rem;
 }
 
 .hero-home p {
-  margin-inline: 1rem;
   max-width: 32ch;
   padding-bottom: 1rem;
 }
 
 .hero-subpage {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
+
   padding: 2rem;
   max-width: 80%;
   margin: auto;
@@ -171,54 +191,66 @@ header {
 }
 
 .hero-image img {
+  width: 100%;
   max-width: 40ch;
   height: auto;
   border-radius: 0.5rem;
 }
 
-.content h2 {
-  padding-bottom: 1rem;
-}
+/* =====================================================
+   BUTTONS
+===================================================== */
+
 
 .cta,
-button {
-  margin-inline: 1rem;
+button.submit-button {
   display: inline-block;
+
   background: #38bdf8;
   color: #020617;
+
   padding: 0.75rem 1.25rem;
   border-radius: 0.375rem;
+
   font-weight: bold;
   transition: 0.3s ease;
   cursor: pointer;
+  border: none;
 }
 
 .cta:hover,
 .cta:focus,
-button:hover,
-button:focus {
+.submit-button:hover,
+.submit-button:focus {
   background: #0ea5e9;
   transform: scale(1.05);
 }
 
+/* =====================================================
+   CONTACT
+===================================================== */
+
 .contact h2 {
-  margin-inline: 3rem;
-  padding: 1.5rem 4rem 0;
+  padding-bottom: 1rem;
 }
 
 .contact form {
-  margin: 3rem 0;
-  margin-inline: 3rem;
-  padding: 0 4rem;
+  margin-top: 2rem;
+
   display: grid;
   gap: 0.75rem;
-  max-width: 25rem;
+
+  width: 100%;
+  max-width: 30rem;
 }
 
 input,
 textarea {
+  width: 100%;
+
   padding: 0.625rem;
   border-radius: 0.375rem;
+
   border: 1px solid #334155;
   background: #020617;
   color: inherit;
@@ -226,12 +258,18 @@ textarea {
 
 textarea {
   min-height: 7rem;
+  resize: vertical;
 }
+
+/* =====================================================
+   PAGE LAYOUT
+===================================================== */
 
 .page-container {
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 2rem;
+
   max-width: 80vw;
   margin: auto;
 }
@@ -271,6 +309,7 @@ textarea {
 
 .sidebar-nav a {
   display: block;
+
   padding: 0.4rem 0.6rem;
   border-radius: 0.4rem;
 
@@ -291,14 +330,23 @@ textarea {
   outline-offset: 2px;
 }
 
+/* =====================================================
+   CONTENT
+===================================================== */
+
 .content {
-  margin: 3rem;
-  padding: 0 4rem;
+  margin: 3rem 0;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+
   align-items: center;
   animation: fadeIn 1s ease-in forwards;
+}
+
+.content h2 {
+  padding-bottom: 1rem;
 }
 
 .content p {
@@ -306,9 +354,8 @@ textarea {
 }
 
 .content img {
-  max-width: 100%;
+  width: 100%;
   border-radius: 0.5rem;
-
 }
 
 .grund-content {
@@ -328,6 +375,9 @@ textarea {
 .element {
   display: grid;
   grid-template-columns: 1fr 2fr;
+
+  gap: 1rem;
+
   padding: 1rem;
   border-top: var(--border);
 }
@@ -351,10 +401,13 @@ textarea {
 .inline-link::after {
   content: "";
   position: absolute;
+
   width: 0;
   height: 2px;
+
   bottom: -2px;
   left: 0;
+
   transition: width 0.3s ease;
 }
 
@@ -362,6 +415,10 @@ textarea {
 .inline-link:focus::after {
   width: 100%;
 }
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer {
   text-align: center;
@@ -377,10 +434,13 @@ footer {
 .footer-link::after {
   content: "";
   position: absolute;
+
   width: 0;
   height: 2px;
+
   bottom: -2px;
   left: 0;
+
   background-color: #38bdf8;
   transition: width 0.3s ease;
 }
@@ -390,11 +450,124 @@ footer {
   width: 100%;
 }
 
+/* =====================================================
+   HAMBURGER MENU
+===================================================== */
+
+.hamburger-button {
+  display: none;
+
+  background: linear-gradient(rgba(27,17,30,0.95), rgba(167,139,250,0.25));
+  border: none;
+
+  color: white;
+  font-size: 2rem;
+
+  cursor: pointer;
+  transform: none;
+}
+
+.hamburger-button svg {
+  fill: white;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .page-container {
+    grid-template-columns: 1fr;
+    max-width: 95%;
+  }
+
+  .sidebar-nav {
+    position: relative;
+    top: 0;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-subpage {
+    flex-direction: column;
+    max-width: 95%;
+    text-align: center;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+@media (width < 480px) {
+
+  .hamburger-button {
+    display: block;
+    margin-left: auto;
+    background: #020617;
+    border: none;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    border: 0.001rem solid #EFF6FF;
+  }
+
+  .hamburger-button:hover,
+  .hamburger-button:active,
+  .hamburger-button:focus {
+    transform: none;
+    background: #020617;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #020617;
+    padding: 1rem;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: 0.3s ease;
+  }
+
+  nav ul.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 769px) {
+
+  .hamburger-button {
+    display: none;
+  }
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

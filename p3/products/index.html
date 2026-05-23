@@ -2,96 +2,166 @@
 <html lang="sv">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="En modern och responsiv webbdesign med fokus på HTML och CSS. Lär dig hur layout, navigation och design anpassas för mobil, tablet och desktop." />
-    <title>Responsive&trade;</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- FIXME: varför fungerar inte css? -->
-    <link rel="stylesheet" href="../assets/style.css">
+  <meta name="description"
+    content="En modern och responsiv webbdesign med fokus på HTML och CSS. Lär dig hur layout, navigation och design anpassas för mobil, tablet och desktop." />
+
+  <title>Responsive™</title>
+
+  <!-- FIXME: varför fungerar inte css? -->
+  <link rel="stylesheet" href="../assets/style.css" />
 </head>
 
 <body>
-    <nav class="navigation-bar">
+
+  <nav class="navigation-bar">
+
+    <div class="flex-layout">
+      <img class="main-logo" src="../img/m2logo.svg" alt="logo" />
+      <span class="upper">Responsive™</span>
+    </div>
+
+    <ul class="primary-navigation" id="primary-navigation">
+      <li><a class="nav-link" href="../index.html">Home</a></li>
+      <li><a class="nav-link selected" href="../products/index.html">Products</a></li>
+      <li><a class="nav-link" href="#">About us</a></li>
+      <li><a class="nav-link" href="#">Contact</a></li>
+      <li><a class="nav-link" href="../../index.html">Portfolio</a></li>
+    </ul>
+
+    <button
+      class="hamburger-button"
+      id="hamburger-button"
+      aria-label="hamburger-button"
+      aria-expanded="false"
+    >
+      <svg class="icon-hamburger" viewBox="0 0 100 100" width="32">
+        <rect class="line top" width="90" height="3" x="5" y="30" rx="2"></rect>
+        <rect class="line middle" width="90" height="3" x="5" y="50" rx="2"></rect>
+        <rect class="line bottom" width="90" height="3" x="5" y="70" rx="2"></rect>
+      </svg>
+    </button>
+
+    <!-- TODO: implementera hamburger-knapp funktionalitet -->
+  </nav>
+
+  <header class="margins">
+    <h1>Products</h1>
+  </header>
+
+  <main>
+
+    <section class="margins">
+
+      <!-- TODO: FRIVILLIG: Gör klart sidan om du har tid -->
+
+      <div class="card-layout">
+
+        <article class="card">
+          <img class="card-image" src="../img/norsken.jpg" alt="northern lights" loading="lazy" />
+          <p>Northern Lights</p>
+        </article>
+
+        <article class="card">
+          <img class="card-image" src="../img/moon.jpg" alt="Moon and a boy" loading="lazy" />
+          <p>Moon and a Boy</p>
+        </article>
+
+        <article class="card">
+          <img class="card-image" src="../img/nedladdning.jpg" alt="lion in a forest" loading="lazy" />
+          <p>Lion in a Forest</p>
+        </article>
+
+        <article class="card">
+          <img class="card-image" src="../img/paris.jpg" alt="Paris" loading="lazy" />
+          <p>Paris</p>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <!-- FIXME: footer hamnar inte längst ner -->
+    <!-- (detta är CSS-problem, inte HTML) -->
+
+    <div class="footer-container margins">
+
+      <!-- Brand -->
+      <div class="footer-info">
         <div class="flex-layout">
-            <img class="main-logo" src="../img/m2logo.svg" alt="logo"> <!-- FIXME: något fel på sökvägen-->
-            <span class="upper">Responsive&trade;</span>
+          <img class="main-logo" src="../img/m2logo.svg" alt="logo" />
+          <span class="upper color-reversed">Responsive™</span>
         </div>
+      </div>
 
-        <ul class="primary-navigation" id="primary-navigation">
-            <li><a class="nav-link" href="../index.html">Home</a></li>
-            <li><a class="nav-link selected" href="../products/index.html">Products</a></li>
-            <li><a class="nav-link" href="#">About us</a></li>
-            <li><a class="nav-link" href="#">Contact</a></li>
-            <li><a class="nav-link" href="../../index.html">Portfolio</a></li>
+      <nav class="footer-navigation-bar">
+        <span class="footer-title">Navigation</span>
+
+        <ul class="footer-navigation">
+          <li><a class="footer-link" href="../index.html">Home</a></li>
+          <li><a class="footer-link selected" href="../products/index.html">Products</a></li>
+          <li><a class="footer-link" href="#">Contact</a></li>
+          <li><a class="footer-link" href="#">About us</a></li>
+          <li><a class="footer-link" href="../../index.html">Portfolio</a></li>
         </ul>
+      </nav>
 
+      <div class="footer-info">
+        <span class="footer-title">Information</span>
 
-        <button class="hamburger-button" id="hamburger-button" aria-label="hamburger-button" aria-expanded="false">
-            <svg fill="black" class="icon-hamburger" viewBox="0 0 100 100" width="32">
-                <rect class="line top" width="90" height="3" x="5" y="30" rx="2"></rect>
-                <rect class="line middle" width="90" height="3" x="5" y="50" rx="2"></rect>
-                <rect class="line bottom" width="90" height="3" x="5" y="70" rx="2"></rect>
-            </svg>
-        </button>
+        <p class="footer-text">Responsive™</p>
+        <p class="footer-text">123 CSS Grid Street, Flextown</p>
 
-        <!-- TODO: implementera hamburger-knapp med funktionalitet (se hamburger.txt i filer) -->
-    </nav>
-    <header class="margins">
-        <h1>Products</h1>
-    </header>
-    <main>
-        <section class="margins">
-            <!--TODO: FRIVILLIG: Gör klart sidan om du har tid-->
-        </section>
-    </main>
-    <footer>
-        <!-- FIXME: det är något fel med footer - kolla själv den är inte i botten av sidan. footer måste alltid vara i botten av hemsidan. prova att zooma ut med CTRL -/+ (plus/minus)   -->
+        <p class="footer-text">
+          <a class="footer-link" href="mailto:info@responsive.com">
+            info@responsive.com
+          </a>
+        </p>
+      </div>
 
-        <div class="footer-container margins">
-            <div class="footer-info">
-                <div class="flex-layout">
-                    <img class="main-logo" src="../img/m2logo.svg" alt="logo">
-                    <span class="upper color-reversed">Responsive&trade;</span>
-                </div>
-            </div>
-            <nav class="footer-navigation-bar">
-                <span class="footer-title">Navigation</span>
-                <ul class="footer-navigation">
-                    <li><a class="footer-link" href="../index.html">Home</a></li>
-                    <li><a class="footer-link selected" href="../products/index.html">Products</a></li>
-                    <li><a class="footer-link" href="#">Contact</a></li>
-                    <li><a class="footer-link" href="#">About us</a></li>
-                    <li><a class="footer-link" href="../../index.html">Portfolio</a></li>
-                </ul>
-            </nav>
-            <div class="footer-info">
-                <span class="footer-title">Information</span>
-                <p class="footer-text">Responsive&trade;</p>
-                <p class="footer-text">123 CSS Grid Street, Flextown</p>
-                <p class="footer-text"><a class="footer-link" href="mailto:info@responsive.com">info@responsive.com</a>
-                </p>
-            </div>
-            <div class="footer-social">
-                <span class="footer-title">Follow Us</span>
+      <div class="footer-social">
+        <span class="footer-title">Follow Us</span>
 
-                <ul class="social-links flex-layout">
-                    <li><a class="footer-link" href="#" target="_blank"><img class="logo"
-                                src="../img/social/Facebook_Logo_(2019).png.webp" alt="Facebook"></a></li>
-                    <li><a class="footer-link" href="#" target="_blank"><img class="logo" src="../img/social/x.png"
-                                alt="Twitter"></a></li>
-                    <li><a class="footer-link" href="#" target="_blank"><img class="logo" src="../img/social/linked.png"
-                                alt="LinkedIn"></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom margins">
-            <p class="footer-text small">&copy; 2024 Responsive&trade;. Some rights reserved. | <a class="footer-link"
-                    href="privacy">Privacy Policy</a> | <a class="footer-link" href="terms">Terms of Service</a></p>
-        </div>
-    </footer>
-    <script src="../assets/main.js"></script>
+        <ul class="social-links flex-layout">
+          <li>
+            <a class="footer-link" href="#" target="_blank">
+              <img class="logo" src="../img/social/Facebook_Logo_(2019).png.webp" alt="Facebook" loading="lazy" />
+            </a>
+          </li>
+
+          <li>
+            <a class="footer-link" href="#" target="_blank">
+              <img class="logo" src="../img/social/x.png" alt="Twitter" loading="lazy" />
+            </a>
+          </li>
+
+          <li>
+            <a class="footer-link" href="#" target="_blank">
+              <img class="logo" src="../img/social/linked.png" alt="LinkedIn" loading="lazy" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom margins">
+      <p class="footer-text small">
+        &copy; 2024 Responsive™. Some rights reserved. |
+        <a class="footer-link" href="privacy">Privacy Policy</a> |
+        <a class="footer-link" href="terms">Terms of Service</a>
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="../assets/main.js" defer></script>
+
 </body>
-
 </html>

@@ -2,91 +2,155 @@
 <html lang="sv">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="En webbplats om DOM och hur det fungerar i HTML.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="En webbplats om DOM och hur det fungerar i HTML." />
+
   <title>Hur fungerar DOM?</title>
-  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <script script src="../../Dropdown-menu/menu.js" defer></script>
 </head>
 
 <body>
+
   <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
 
   <nav aria-label="Huvudnavigation">
+
     <span>Webbens &amp; HTMLs historia</span>
-    <ul>
+
+    <ul id="primary-navigation">
       <li><a class="nav-link" href="../project2.html">Hem</a></li>
       <li><a class="nav-link" href="../assets/grounds.html">Grunderna</a></li>
       <li><a class="nav-link" href="../assets/history.html">HTMLs historia</a></li>
-      <li><a class="nav-link" href="../assets/dom.html" aria-current="page">Hur fungerar det?</a></li>
+      <li>
+        <a class="nav-link" href="../assets/dom.html" aria-current="page">
+          Hur fungerar det?
+        </a>
+      </li>
       <li><a class="nav-link" href="../assets/access.html">Tillgänglighet</a></li>
     </ul>
+
+     <button class="hamburger-button" id="hamburger-button" aria-label="Meny" aria-expanded="false">
+      <svg fill="var(--clr-secondary)" class="icon-hamburger" viewBox="0 0 100 100" width="32">
+        <rect class="line top" width="90" height="3" x="5" y="30" rx="2"></rect>
+        <rect class="line middle" width="90" height="3" x="5" y="50" rx="2"></rect>
+        <rect class="line bottom" width="50" height="3" x="45" y="70" rx="2"></rect>
+      </svg>
+    </button>
+
   </nav>
 
   <header id="home">
+
     <div class="hero-subpage">
+
       <div class="hero-text">
         <h1>Hur fungerar DOM?</h1>
         <p>DOM är en struktur som gör det möjligt att interagera med HTML-dokument via JavaScript.</p>
       </div>
+
       <div class="hero-image">
-        <img src="../img/dom.webp" alt="Illustration av DOM-struktur" loading="lazy">
+        <img src="../img/dom.webp" alt="Illustration av DOM-struktur" loading="lazy" />
       </div>
+
     </div>
+
   </header>
 
   <main id="main-content">
 
-    <div class="content">
+    <!-- WHAT IS DOM -->
+    <section class="content">
+
       <div>
         <h2>Vad är DOM?</h2>
-        <p>DOM står för <strong>Document Object Model</strong> och representerar HTML-dokumentet som ett träd av noder. Med DOM kan man ändra innehåll, struktur och stil på webbsidor med JavaScript.</p>
+        <p>
+          DOM står för <strong>Document Object Model</strong> och representerar HTML-dokumentet som ett träd av noder.
+          Med DOM kan man ändra innehåll, struktur och stil på webbsidor med JavaScript.
+        </p>
       </div>
-      <div>
-        <img src="../img/dom_types.png" alt="Exempel på DOM-träd med noder" loading="lazy">
-      </div>
-    </div>
 
-    <div class="content">
+      <div>
+        <img src="../img/dom_types.png" alt="Exempel på DOM-träd med noder" loading="lazy" />
+      </div>
+
+    </section>
+
+    <section class="content">
+
       <div>
         <h2>DOM-trädet</h2>
-        <p>HTML-dokumentet är uppbyggt som ett träd. Roten är <code>&lt;html&gt;</code>, som innehåller <code>&lt;head&gt;</code> och <code>&lt;body&gt;</code>. Under dessa finns fler noder som <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code> och <code>&lt;img&gt;</code>.</p>
-      </div>
-      <div>
-        <img src="../img/dom-tree.jpg" alt="Trädstruktur av HTML-element som noder i DOM" loading="lazy">
-      </div>
-    </div>
 
-    <div class="content">
+        <p>
+          HTML-dokumentet är uppbyggt som ett träd. Roten är <code>&lt;html&gt;</code>,
+          som innehåller <code>&lt;head&gt;</code> och <code>&lt;body&gt;</code>.
+        </p>
+
+        <p>
+          Under dessa finns fler noder som <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code> och
+          <code>&lt;img&gt;</code>.
+        </p>
+      </div>
+
+      <div>
+        <img src="../img/dom-tree.jpg" alt="Trädstruktur av HTML-element som noder i DOM" loading="lazy" />
+      </div>
+
+    </section>
+
+    <!-- NODES -->
+    <section class="content">
+
       <div>
         <h2>Element och noder</h2>
+
         <p>I DOM finns olika typer av noder:</p>
+
         <ul>
           <li>Elementnoder</li>
           <li>Textnoder</li>
           <li>Attributnoder</li>
           <li>Kommentar-noder</li>
         </ul>
-        <p>Med JavaScript kan man t.ex. ändra text (<code>textContent</code>), ändra attribut (<code>setAttribute()</code>), lägga till eller ta bort element (<code>appendChild()</code>, <code>removeChild()</code>) och lyssna på händelser (<code>addEventListener()</code>).</p>
-      </div>
-      <div>
-        <img src="../img/html-dom.jpg" alt="Illustration av olika typer av DOM-noder" loading="lazy">
-      </div>
-    </div>
 
-    <div class="content">
+        <p>
+          Med JavaScript kan man t.ex. ändra text (<code>textContent</code>),
+          ändra attribut (<code>setAttribute()</code>),
+          lägga till eller ta bort element (<code>appendChild()</code>, <code>removeChild()</code>)
+          och lyssna på händelser (<code>addEventListener()</code>).
+        </p>
+
+      </div>
+
+      <div>
+        <img src="../img/html-dom.jpg" alt="Illustration av olika typer av DOM-noder" loading="lazy" />
+      </div>
+
+    </section>
+
+    <section class="content">
+
       <div>
         <h2>Exempel på DOM-manipulation</h2>
+
         <p>Här är ett enkelt exempel som ändrar texten i ett element:</p>
-        <pre>
-<code>
+
+        <pre><code>
 const title = document.getElementById("my-title");
 title.textContent = "Ny rubrik med JavaScript!";
-</code>
-        </pre>
-        <p>Denna kod hittar elementet med id <code>my-title</code> och ändrar texten. Det är ett grundläggande sätt att interagera med DOM.</p>
+        </code></pre>
+
+        <p>
+          Denna kod hittar elementet med id <code>my-title</code> och ändrar texten.
+          Det är ett grundläggande sätt att interagera med DOM.
+        </p>
+
       </div>
-    </div>
+
+    </section>
 
   </main>
 
@@ -95,4 +159,5 @@ title.textContent = "Ny rubrik med JavaScript!";
   </footer>
 
 </body>
+
 </html>
