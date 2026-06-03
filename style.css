@@ -336,9 +336,7 @@ header {
 }
 
 
-/* =========================
-   TYPOGRAFI
-========================= */
+/* Text */
 img {
   display: block;
   max-width: 100%;
@@ -373,9 +371,7 @@ p {
 }
 
 
-/* =========================
-   DROPDOWN
-========================= */
+/* DROPDOWN */
 li ul li a {
   display: block;
   padding: calc(var(--menu-dropdown-size) / 1.5)
@@ -442,9 +438,7 @@ li ul li a {
 }
 
 
-/* =========================
-   BUTTONS / HAMBURGER
-========================= */
+/* BUTTONS / HAMBURGER */
 .hamburger-button {
   all: unset;
   display: none;
@@ -452,9 +446,7 @@ li ul li a {
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER*/
 footer {
   margin-top: 0;
   padding: 1rem;
@@ -463,9 +455,7 @@ footer {
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/*RESPONSIVE*/
 
 /* Tablet */
 @media (width < 840px) {

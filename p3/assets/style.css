@@ -300,24 +300,48 @@ img {
     width: 100%;
     height: auto;
 }
-
 /* cards styling */
 
-/* TODO: se till att bilderna funkar i mobil-versionen */
 .card {
-    all: unset;
+    background: white;
     overflow: hidden;
     border-radius: 1rem;
-    transition: opacity 250ms ease-in-out;
-}
 
-.card-image {
-    aspect-ratio: 4/5;
-    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 250ms ease-in-out,
+        box-shadow 250ms ease-in-out,
+        opacity 250ms ease-in-out;
+
+    text-align: center;
     cursor: pointer;
 }
 
-/* TODO: ÖVERKURS: Jag vill att alla utom den man hovrar över ska vara halvgenomskinliga - animationen, transition, måste också fungera */
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+}
+
+.card p {
+    margin: 0;
+    padding: 1rem;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    color: #333;
+}
+
 .card-layout:hover .card {
     opacity: 0.4;
 }
@@ -325,7 +349,6 @@ img {
 .card-layout .card:hover {
     opacity: 1;
 }
-
 
 /* link styling */
 

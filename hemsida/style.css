@@ -475,6 +475,10 @@ footer {
     object-fit: cover;
   }
 
+  li.body-text {
+   margin-inline: 1rem;
+  }
+
   .icon-hamburger .line {
     transform-origin: center;
 
