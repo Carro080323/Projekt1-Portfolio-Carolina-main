@@ -73,6 +73,7 @@ nav.navigation-bar {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    
 
     /* FIXME: clip-path används för sneda linjer / diagonala linjer: välj om du vill fixa clip-path så det passar för mobil i en "media query" eller om du vill ta bort effekten helt på mobiler/paddor.
     
@@ -202,7 +203,7 @@ p {
 
 h1,
 h2 {
-    color: black;
+    color: #353535;
 }
 
 h3 {
@@ -362,7 +363,7 @@ img {
 
     font-family: inherit;
     font-weight: 600;
-    color: white;
+    color: #353535;
     background-color: var(--clr-cta);
 
     text-align: center;
@@ -559,6 +560,10 @@ img {
     .hero-layout {
         grid-template-columns: 1fr;
         width: 90%;
+    }
+
+    .main-header {
+        background-image: none;
     }
 
     .card-layout {

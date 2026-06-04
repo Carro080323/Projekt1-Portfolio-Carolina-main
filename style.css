@@ -78,13 +78,42 @@ main {
   text-align: center;
 }
 
-header {
-  padding-top: 2rem;
-  padding-bottom: 0.5rem;
-  width: 70%;
-  margin-left: 10rem;
+.hero-home {
+  border-radius: 0.5rem;
+  animation: fadeIn 1s ease-in;
 }
 
+.hero-home {
+  background:
+    url("./img/hero.avif");
+
+  background-size: cover;
+  background-position: center;
+
+  padding: clamp(2rem, 6vw, 4rem);
+  text-align: left;
+}
+
+.hero-home h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.hero-home p {
+  max-width: 32ch;
+  padding-bottom: 1rem;
+}
+
+.hero-text {
+  max-width: 34ch;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 40ch;
+  height: auto;
+  border-radius: 0.5rem;
+}
 
 /* =========================
    NAVIGATION
